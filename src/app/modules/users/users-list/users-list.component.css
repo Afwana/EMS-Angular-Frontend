@@ -1,0 +1,19 @@
+a{
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+/* .active{
+    background-color: #02b002;
+    padding: 8px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.inactive{
+    background-color: #ed1c1c;
+    padding: 8px;
+    color: #ffffff;
+    border-radius: 10px;
+} */
+/* instead of applying css it's easy to apply bootstrap */

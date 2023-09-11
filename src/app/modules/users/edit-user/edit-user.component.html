@@ -1,0 +1,50 @@
+<div class="d-flex border border-light">
+    <div class="sidebar bg-info p-3 d-flex flex-column" style="width: 200px; height: 90vh;">
+        <a routerLink="/home"> HOME </a>
+        <a routerLink="/users"> USERS </a>
+    </div>
+    <div class="dashboard p-3 w-100">
+        <h1> Edit User </h1>
+        <div class="user-details mt-5 border rounded p-3 w-50">
+          <form #addUserForm="ngForm">
+              <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="User ID" name="id" #id="ngModel" [(ngModel)]="user.id" pattern="[0-9]*" required>
+                  <label for="floatingInput">User ID</label>
+                </div>
+                <!-- invalid Id -->
+                <div *ngIf="id.invalid && id.touched" class="mb-3 text-danger"> *Inavalid Id </div>
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingName" placeholder="User Name" name="name" #name="ngModel" [(ngModel)]="user.name" pattern="[ a-zA-Z ]*" required >
+                  <label for="floatingName">User Name</label>
+                </div>
+                <!-- invalid Name -->
+                <div *ngIf="name.invalid && name.touched" class="mb-3 text-danger"> *Inavalid Username </div>
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingEmail" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="user.email" email required>
+                  <label for="floatingEmail">Email</label>
+                </div>
+                <!-- invalid Email -->
+                <div *ngIf="email.invalid && email.touched" class="mb-3 text-danger"> *Inavalid Email Id </div>
+
+                <div class="form-floating mb-3">
+                  <select id="floatingStatus" class="form-control" name="active" #active="ngModel" [(ngModel)]="user.active" required>
+                      <option disabled selected hidden value=""></option>
+                      <option value="1"> Active </option>
+                      <option value="0"> Inactive </option>
+                  </select>
+                  <label for="floatingStatus">Status</label>
+                </div>
+                <!-- invalid status -->
+                <div *ngIf="active.invalid && active.touched" class="mb-3 text-danger"> *Inavalid Status </div>
+
+                <div>
+                    <button (click)="cancelUpdate(user.id)" class="btn btn-warning"> Cencel </button>
+                    <button (click)="updateUser()" [disabled]="addUserForm.invalid" class="btn btn-success ms-5"> Save </button>
+                </div>
+          </form>
+      </div>
+
+    </div>
+</div>

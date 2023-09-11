@@ -1,0 +1,38 @@
+        Employee-Portal : User Management system
+                cred application
+
+    Features :
+        1. login page - (username password, login button) - admin
+        2. Home page - admin dashboard
+        3. users list page - (new user add button display users details as table)
+            - table should contains :
+                - user id, username, email, status, action(edit, Delete)
+        4. users add page
+            - user id, username, email, status(dropdown : active,inactive) , button for cance (clear the from) and save (add user to userslist)
+        5. users edit page
+            - same as add users 
+    Components : 6 Components 
+    Modules : 2 Modules
+        1. appModule : login component, home component, header component
+        2. userModule : user list component, user add component, user edit component
+    set up path for each component
+    Design the Components
+    creating a JSON Sever for employee Portal 
+        - creating a separate folder for server
+        - inside server folder , create package.json file using command : npm init -y
+        - inside server folder , install json-server package : npm i json-server
+        - create .gitignore file in server folder and add node_modules inside it.
+        - create entry file (index.js) of your server folder
+        - update script, start as node index.js in package.json file 
+        - create db.json file in server folder to hold json content 
+        - steps to generate json server, inside index.js file
+            - import json-server
+            - create our own server to run json file
+            - generate middleware to use in jsonserver
+            - set up path for db.json 
+            - set up port for server
+            - use middleware, router, to server
+            - server listen / run to request
+        - to run server app: use command - node index.js and open http://localhost:3000/ in browser
+    create angular service 
+
